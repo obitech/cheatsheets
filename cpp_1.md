@@ -115,6 +115,19 @@ bool palin(string name) {
     return check == 0 ? true : false;
 }
 ```
+#### Find substring (needle in haystack)
+```c++
+bool contains(string haystack, string needle){
+    if (haystack.size() < needle.size())
+        return false;
+    int needleSize = needle.size();
+    for (int i = 0; i < haystack.size(); i++){
+        if (haystack.substr(i, needleSize) == needle)
+                return true;
+    }
+    return false;
+}
+```
 
 #### 1.2. Arrays
 #### Dynamically allocate
