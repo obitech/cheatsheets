@@ -71,6 +71,33 @@ void remove_data(lelem *&head, int val) {
     remove_data(head->next, val);
 }
 ```
+#### Copy
+```c++
+void copy(lelem* head1, lelem* &head2) {
+    head2 = NULL;
+
+    if (head1 == NULL)
+        return;
+    
+    insert_front(head2,head1->data);
+    
+    lelem* tmp = head1->next;
+
+    lelem* tail = head2;
+    
+    while (tmp != NULL) {
+        lelem* newelem = new lelem;
+        newelem->data = tmp->data;
+        newelem->next = NULL;
+        tail->next = newelem;
+        
+        tmp = tmp->next;
+
+        tail = tail->next;
+    }
+}
+
+```
 #### 1.2 Double Linked List
 #### Insert at
 ```c++
@@ -194,4 +221,21 @@ ostream& operator<<(ostream& os, Number x) {
 }
 ```
 
-####
+### 3. Dynamic Memory
+#### 2D Matrix
+```c++
+// Create and set 0
+m = new int*[rows];
+for (int i = 0; i < rows; i++) {
+    m[i] = new int[cols];
+    
+    for (int j = 0; j < i; j++) {
+        m[i][j] = 0
+    }
+}
+
+// Delete
+for (int i = 0; i < rows; i++)
+    delete[] m[i];
+delete[] m;
+```
