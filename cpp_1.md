@@ -100,6 +100,21 @@ while (check != zahl) {
     }
 }
 ```
+#### Check if string is palindrom
+```c++
+bool palin(string name) {
+    int len = name.length();
+    int check = 0;
+
+    for (int i = 0; i < len/2 + 1; i++) {
+        if (name[i] == name[(len - 1) - i])
+            check += 0;
+        else
+            check += 1;
+    }
+    return check == 0 ? true : false;
+}
+```
 
 #### 1.2. Arrays
 #### Dynamically allocate
